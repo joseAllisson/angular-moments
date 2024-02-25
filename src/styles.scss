@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #dec129;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #444;
+}
+
+a {
+  text-decoration: none;
+  color: #444;
+  transition: .4s;
+
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+
+// Forms
+form {
+  width: 450px;
+  margin: 0 auto;
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+
+    label {
+      font-weight: bold;
+      font-size: .9em;
+      margin-bottom: .4em;
+    }
+
+    input, textarea {
+      padding: .6em;
+      color: #777;
+      font-size: .8em;
+    }
+  }
+
+  input[type="submit"] {
+      background-color: #efefef;
+      border: 2px solid transparent;
+      padding: .6em 1em;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: .4s;
+      cursor: pointer;
+
+      &:hover {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+        background-color: transparent;
+      }
+  }
+}
