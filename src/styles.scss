@@ -1,17 +1,19 @@
 :root {
   --primary-color: #dec129;
+  --color-text: #444;
+  --red-form: #DC3545;
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: #444;
+  color: var(--color-text);
 }
 
 a {
   text-decoration: none;
-  color: #444;
+  color: var(--color-text);
   transition: .4s;
 
   &:hover {
@@ -56,5 +58,12 @@ form {
         color: var(--primary-color);
         background-color: transparent;
       }
+  }
+
+  .validation-error p {
+    color: var(--red-form);
+    margin-top: .4em;
+    border-left: 3px solid var(--red-form);
+    padding-left: .2em;
   }
 }
