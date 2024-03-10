@@ -1,0 +1,102 @@
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  .search-container {
+    margin: 2em auto;
+    width: 100%;
+
+
+    form {
+      width: 30%;
+      position: relative;
+    }
+
+    .icon {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+    }
+
+    input {
+      padding: .5em;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+
+  .moments-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+
+    .moment {
+      width: 32%;
+      margin-bottom: 1em;
+      text-align: center;
+
+      img {
+        width: 100%;
+        margin-bottom: 1em;
+      }
+
+      h3, p {
+        margin-bottom: 1em;
+      }
+
+      .date {
+        font-size: .7em;
+        font-style: italic;
+      }
+
+      a {
+        color: var(--primary-color);
+        padding: .3em .6em;
+
+        :hover {
+          background-color: #efefef;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px){
+
+    h1 {
+      text-align: center;
+    }
+
+    .search-container {
+      form {
+        width: 100%;
+        padding: 0 16px;
+      }
+
+      .icon {
+        left: 24px;
+      }
+    }
+
+    .moments-container {
+      flex-direction: column;
+
+      .moment {
+        width: 100%;
+
+        p:last-child {
+          padding-bottom: 1em;
+          border-bottom: 1px solid #8080805e;
+        }
+      }
+    }
+  }
+}

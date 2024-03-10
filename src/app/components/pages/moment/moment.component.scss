@@ -1,0 +1,86 @@
+.moment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 60%;
+  max-width: 500px;
+  margin: 0 auto;
+
+  h1 {
+    margin-bottom: 1em;
+  }
+
+  h3 {
+    margin-bottom: 1em;
+  }
+
+  img {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 0 auto 1em;
+  }
+
+  .about-moment, .actions {
+    border-bottom: 1px solid #ccc;
+    padding: 1.2em;
+    width: 100%;
+  }
+
+  .actions {
+    background-color: #eee;
+  }
+
+  .comments {
+    margin-bottom: 1em;
+    padding: 1.5em 0;
+    width: 100%;
+
+    .comment-container {
+      text-align: left;
+      border-bottom: 1px solid #efefef;
+      padding: 1em 0;
+
+      .comment {
+        font-size: 0.9em;
+      }
+
+      .author {
+        font-size: 0.8em;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .comment-form {
+    margin-bottom: 3em;
+
+    form {
+      margin-top: 1em;
+      text-align: left;
+      max-width: 400px;
+      margin-left: 0;
+    }
+  }
+
+  @media screen and (max-width: 600px){
+    max-width: 100%;
+    width: 100%;
+
+    .comments {
+
+      .comment-container {
+        padding-left: 1em;
+      }
+    }
+
+    .comment-form {
+      width: 100%;
+
+      form {
+        margin-left: auto;
+      }
+    }
+  }
+}

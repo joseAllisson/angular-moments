@@ -2,6 +2,7 @@
   --primary-color: #dec129;
   --color-text: #444;
   --red-form: #DC3545;
+  --blue-button: #007bff;
 }
 
 * {
@@ -26,6 +27,12 @@ form {
   width: 450px;
   margin: 0 auto;
 
+  @media screen and (max-width: 600px){
+    width: 100%;
+    margin: auto;
+    padding: 1em;
+  }
+
   .form-group {
     display: flex;
     flex-direction: column;
@@ -41,6 +48,10 @@ form {
       padding: .6em;
       color: #777;
       font-size: .8em;
+
+      &::placeholder {;
+        font-size: 1em;
+      }
     }
   }
 
@@ -65,5 +76,40 @@ form {
     margin-top: .4em;
     border-left: 3px solid var(--red-form);
     padding-left: .2em;
+  }
+}
+
+.edit-btn,
+.remove-btn {
+  border: 1px solid #efefef;
+  padding: .4em 1em;
+  font-size: 1em;
+  margin: 0 .5em;
+  cursor: pointer;
+  background-color: #fff;
+  transition: .4s;
+
+  .icon {
+    margin-right: .2em;
+  }
+
+  &.edit-btn, &.edit-btn path {
+    border-color: var(--blue-button);
+    color: var(--blue-button);
+  }
+
+  &:hover, &:hover path {
+    color: #fff;
+    background-color: var(--blue-button);
+  }
+
+  &.remove-btn, &.remove-btn path {
+    border-color: var(--red-form);
+    color: var(--red-form);
+  }
+
+  &.remove-btn:hover, &.remove-btn:hover path {
+    color: #fff;
+    background-color: var(--red-form);
   }
 }

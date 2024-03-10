@@ -4,8 +4,8 @@
     <h2>Moments</h2>
   </a>
   <ul class="links">
-    <li><a routerLink="/">Home</a></li>
-    <li id="add"><a routerLink="/moments/new">Compartilhar</a></li>
-    <li><a routerLink="/about">Sobre</a></li>
+    <li><a routerLink="/" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+    <li><a routerLink="/moments/new" routerLinkActive="router-link-active">Compartilhar</a></li>
+    <li><a routerLink="/about" routerLinkActive="router-link-active">Sobre</a></li>
   </ul>
 </nav>

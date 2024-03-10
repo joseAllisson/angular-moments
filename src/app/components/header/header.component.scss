@@ -35,14 +35,13 @@ nav {
       padding: .1em .3em;
     }
 
-    #add {
-      a {
+    .router-link-active {
         color: var(--primary-color);
-      }
-
-      a:hover {
-        background-color: #efefef;
-      }
     }
+  }
+
+  @media screen and (max-width: 420px){
+    flex-direction: column;
+    gap: 1em;
   }
 }

@@ -1,25 +1,45 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MomentFormComponent } from './moment-form.component';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 describe('MomentFormComponent', () => {
   let component: MomentFormComponent;
-  let fixture: ComponentFixture<MomentFormComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ MomentFormComponent ]
-    })
-    .compileComponents();
-  });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MomentFormComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new MomentFormComponent();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create a form with default values', () => {
+    component.ngOnInit();
+
+    expect(component.momentForm).toBeDefined();
+    expect(component.title.value).toBe('');
+    expect(component.description.value).toBe('');
+    expect(component.momentForm.valid).toBeFalsy();
+  });
+
+  it('should update image control when file is selected', () => {
+    const file = new File(['test'], 'test.jpg', { type: 'image/jpeg' });
+    const event = { target: { files: [file] } } as unknown as Event;
+
+    component.ngOnInit(); // Chamar ngOnInit antes de testar onFileSelected
+    component.onFileSelected(event);
+
+    expect(component.momentForm.get('image')!.value).toBe(file);
+  });
+
+  it('should emit onSubmit event when form is submitted', () => {
+    const moment = { id: '1', title: 'Test Moment', description: 'Test Description', image: null };
+
+    component.ngOnInit(); // Chamar ngOnInit antes de testar submit
+    component.momentForm.patchValue(moment);
+
+    let emittedMoment: any;
+    component.onSubmit.subscribe((value) => {
+      emittedMoment = value;
+    });
+
+    component.submit();
+
+    expect(emittedMoment).toEqual(moment);
   });
 });

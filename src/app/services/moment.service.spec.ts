@@ -1,16 +1,28 @@
-import { TestBed } from '@angular/core/testing';
+import { MessagesService } from './messages.service';
 
-import { MomentService } from './moment.service';
-
-describe('MomentService', () => {
-  let service: MomentService;
+describe('MessagesService', () => {
+  let service: MessagesService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(MomentService);
+    service = new MessagesService();
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  it('should add a message and clear it after 4 seconds', (done) => {
+    const message = 'Test Message';
+    service.add(message);
+
+    expect(service.message).toBe(message);
+
+    setTimeout(() => {
+      expect(service.message).toBe('');
+      done();
+    }, 4000);
+  });
+
+  it('should clear the message', () => {
+    service.message = 'Test Message';
+    service.clear();
+
+    expect(service.message).toBe('');
   });
 });
