@@ -1,0 +1,40 @@
+.moment {
+  margin-bottom: 1em;
+  text-align: center;
+
+  img {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 1em;
+    object-fit: cover;
+  }
+
+  h3, p {
+    margin-bottom: 1em;
+  }
+
+  .date {
+    font-size: .8em;
+    font-style: italic;
+  }
+
+  a {
+    color: var(--primary-color);
+    padding: .3em .6em;
+
+    :hover {
+      background-color: #efefef;
+    }
+  }
+
+  @media screen and (max-width: 800px){
+    .moment {
+      width: 100%;
+
+      p:last-child {
+        padding-bottom: 1em;
+        border-bottom: 1px solid #8080805e;
+      }
+    }
+  }
+}

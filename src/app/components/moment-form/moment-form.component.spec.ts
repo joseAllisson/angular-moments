@@ -1,5 +1,4 @@
 import { MomentFormComponent } from './moment-form.component';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 describe('MomentFormComponent', () => {
   let component: MomentFormComponent;
@@ -21,7 +20,7 @@ describe('MomentFormComponent', () => {
     const file = new File(['test'], 'test.jpg', { type: 'image/jpeg' });
     const event = { target: { files: [file] } } as unknown as Event;
 
-    component.ngOnInit(); // Chamar ngOnInit antes de testar onFileSelected
+    component.ngOnInit();
     component.onFileSelected(event);
 
     expect(component.momentForm.get('image')!.value).toBe(file);
@@ -30,7 +29,7 @@ describe('MomentFormComponent', () => {
   it('should emit onSubmit event when form is submitted', () => {
     const moment = { id: '1', title: 'Test Moment', description: 'Test Description', image: null };
 
-    component.ngOnInit(); // Chamar ngOnInit antes de testar submit
+    component.ngOnInit();
     component.momentForm.patchValue(moment);
 
     let emittedMoment: any;
