@@ -11,17 +11,17 @@
     </form>
   </div>
 
-  <div *ngIf="moments.length > 0; else noMoments">
+  <section *ngIf="moments.length > 0; else noMoments">
     <div class="moments-container">
-      <div class="moment" *ngFor="let moment of moments">
+      <article class="moment" *ngFor="let moment of moments">
         <img src="{{ baseApiUrl }}/uploads/{{ moment.image }}" alt="">
         <h3>{{ moment.title }}</h3>
         <p class="date">Em: {{ moment.created_at }}</p>
         <p>Comentários: {{ moment.comments!.length }}</p>
         <p><a routerLink="moments/{{ moment.id }}">Detalhes</a></p>
-      </div>
+      </article>
     </div>
-  </div>
+  </section>
 
   <ng-template #noMoments>
     <h1>Não há Momentos cadastrados!</h1>
