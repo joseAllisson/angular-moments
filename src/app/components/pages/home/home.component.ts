@@ -29,6 +29,8 @@ export class HomeComponent implements OnInit {
         item.created_at = new Date(item.created_at!).toLocaleDateString('pt-BR');
       });
 
+      data.sort((a, b) => Number(b.id) - Number(a.id));
+
       this.allMoments = data;
       this.moments = data;
     });
