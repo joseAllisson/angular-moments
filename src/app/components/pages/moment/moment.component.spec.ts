@@ -4,9 +4,7 @@ import { CommentService } from 'src/app/services/comment.service';
 import { MessagesService } from 'src/app/services/messages.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { of } from 'rxjs';
-import { FormGroupDirective } from '@angular/forms';
-import { Moment } from 'src/app/interfaces/Moment';
-import { Comment } from 'src/app/interfaces/Comment';
+import { momentMock } from 'src/app/mock/Moment';
 
 describe('MomentComponent', () => {
   let component: MomentComponent;
@@ -15,23 +13,6 @@ describe('MomentComponent', () => {
   let messagesService: jasmine.SpyObj<MessagesService>;
   let route: jasmine.SpyObj<ActivatedRoute>;
   let router: jasmine.SpyObj<Router>;
-
-  const momentMock: Moment = {
-    id: 1,
-    title: 'Test Moment 1',
-    description: 'Test Description 1',
-    image: 'Test Image 1',
-    created_at: '2021-01-01T00:00:00.000Z',
-    updated_at: '2021-01-01T00:00:00.000Z',
-    comments: [{ text: 'Test Comment 1', username: 'Test User 1' }]
-  }
-
-  const commentMock: Comment = {
-    id: '1',
-    text: 'Test Comment',
-    username: 'Test User',
-    momentId: 1
-  }
 
   beforeEach(() => {
     momentService = jasmine.createSpyObj('MomentService', ['getMoment', 'removeMoment']);
