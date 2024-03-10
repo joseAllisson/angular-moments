@@ -1,6 +1,6 @@
 # Moments
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.3.0.
 
 ## Development server
 
@@ -25,3 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+![image](https://github.com/joseAllisson/angular-moments/assets/59458404/bd9a84fe-dade-46d8-82e7-b5ae943422d9)
+
+![image](https://github.com/joseAllisson/angular-moments/assets/59458404/d34b651c-ecfc-4048-a2a6-133724ba5784)
