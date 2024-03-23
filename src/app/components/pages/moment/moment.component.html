@@ -1,6 +1,6 @@
 <div class="moment" *ngIf="moment">
   <h1>{{moment.title}}</h1>
-  <img src="{{ baseApiUrl }}/uploads/{{ moment.image }}" alt="moment">
+  <img src="{{ baseApiUrl }}/{{ moment.image }}" alt="moment">
   <div class="about-moment">
     <h3>Sobre este momento:</h3>
     <p>{{ moment.description }}</p>

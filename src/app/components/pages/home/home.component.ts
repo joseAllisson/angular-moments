@@ -4,6 +4,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Moment } from 'src/app/interfaces/Moment';
 import { MomentService } from 'src/app/services/moment.service';
 import { environment } from 'src/environments/environment';
+import * as momentDate from 'moment';
 
 @Component({
   selector: 'app-home',
@@ -26,7 +27,7 @@ export class HomeComponent implements OnInit {
       const data = items.data;
 
       data.map(item => {
-        item.created_at = new Date(item.created_at!).toLocaleDateString('pt-BR');
+        item.created_at = momentDate(item.created_at).format('DD/MM/YYYY');
       });
 
       data.sort((a, b) => Number(b.id) - Number(a.id));

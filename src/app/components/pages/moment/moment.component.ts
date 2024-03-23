@@ -51,11 +51,17 @@ export class MomentComponent implements OnInit {
   }
 
   async removeHandler(id: number) {
-    this.momentService.removeMoment(id).subscribe();
+    this.momentService.removeMoment(id).subscribe({
+      next: () => {
+        this.messagesService.add(`Momento excluído com sucesso!`);
 
-    this.messagesService.add(`Momento excluído com sucesso!`);
+        this.router.navigate(['/']);
 
-    this.router.navigate(['/']);
+      },
+      error: () => {
+        this.messagesService.add('Erro ao excluir momento!');
+      }
+    });
   }
 
   async onSubmit(formDirective: FormGroupDirective) {

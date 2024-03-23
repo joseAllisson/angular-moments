@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MomentComponent } from './components/pages/moment/moment.component';
 import { EditMomentComponent } from './components/pages/edit-moment/edit-moment.component';
 import { CardMomentComponent } from './components/card-moment/card-moment.component';
+import { ApiKeyInterceptor } from './interceptors/http-interceptor';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,9 @@ import { CardMomentComponent } from './components/card-moment/card-moment.compon
     ReactiveFormsModule,
     FontAwesomeModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ApiKeyInterceptor, multi: true }
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
