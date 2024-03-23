@@ -12,7 +12,7 @@
   </div>
 
   <section *ngIf="moments.length > 0; else noMoments">
-    <div class="moments-container">
+    <div class="moments-container" id="moments-container" (scroll)="onScroll($event)">
       <app-card-moment
         *ngFor="let moment of moments"
         [moment]="moment"

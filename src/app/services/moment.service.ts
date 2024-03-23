@@ -15,8 +15,11 @@ export class MomentService {
 
   constructor(private http: HttpClient) { }
 
-  getMoments(): Observable<Response<Moment[]>> {
-    return this.http.get<Response<Moment[]>>(this.apiUrl);
+  getMoments(
+      page: number = 1,
+      perPage: number = 20,
+      searchTerm: string = ''): Observable<Response<Moment[]>> {
+    return this.http.get<Response<Moment[]>>(`${this.apiUrl}?page=${page}&perPage=${perPage}&searchTerm=${searchTerm}`);
   }
 
   getMoment(id: number): Observable<Response<Moment>> {
